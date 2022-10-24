@@ -10,7 +10,7 @@ module.exports = {
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,
-        inlineRequires: true,
+        inlineRequires: true, // 스토리북 사용시 false
       },
     }),
   },
