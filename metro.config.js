@@ -10,8 +10,11 @@ module.exports = {
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,
-        inlineRequires: true, // 스토리북 사용시 false
+        inlineRequires: false,
       },
     }),
+  },
+  resolver: {
+    resolverMainFields: ["sbmodern", "react-native", "browser", "main"],
   },
 };

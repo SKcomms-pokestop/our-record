@@ -3,10 +3,18 @@
  */
 
 import { AppRegistry } from 'react-native';
-import App from './App';
-import StorybookUIRoot from './storybook';
 import { name as appName } from './app.json';
 
-const render = App; // App | StorybookUIRoot
+/**
+ * App 렌더
+ */
+import App from './App';
+const render = App;
+
+/**
+ * Storybook 렌더
+ */
+// import StorybookUIRoot from './.ondevice/Storybook';
+// const render = StorybookUIRoot;
 
 AppRegistry.registerComponent(appName, () => render);
