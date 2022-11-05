@@ -1,17 +1,16 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, View } from 'react-native';
-
 import { Button } from 'antd-mobile-rn';
+import ReduxWrapper from './modules/ReduxWrapper';
+import Home from './pages/home';
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View>
-          <Button>button</Button>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <ReduxWrapper>
+      <SafeAreaView>
+        <Home />
+      </SafeAreaView>
+    </ReduxWrapper>
   );
 };
 
