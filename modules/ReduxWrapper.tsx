@@ -1,9 +1,16 @@
 import React, { ReactNode } from 'react';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import createSagaMiddleware from 'redux-saga';
 import rootReducer from '../modules/reducers';
+import rootSaga from '../modules/sagas';
 
-const store = createStore(rootReducer);
+const sagaMiddleware = createSagaMiddleware();
+
+const enhancer = applyMiddleware(sagaMiddleware);
+
+const store = createStore(rootReducer, enhancer);
+sagaMiddleware.run(rootSaga);
 
 interface P {
   children: ReactNode;
