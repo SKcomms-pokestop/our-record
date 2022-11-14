@@ -4,6 +4,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ReduxWrapper from './modules/ReduxWrapper';
 import Home from './pages/home';
 import Folder from './pages/folder';
+import Profile  from './pages/profile';
+import Record from './pages/record';
+import { Header } from './components/Header/Header';
 
 const Stack = createBottomTabNavigator();
 
@@ -12,8 +15,12 @@ const App = () => {
     <ReduxWrapper>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Folder" component={Folder} />
+          <Stack.Group screenOptions={{ headerTitle: () => <Header></Header> }}>
+            <Stack.Screen name="Home" component={Home}/>
+            <Stack.Screen name="Folder" component={Folder}/>
+            <Stack.Screen name="Record" component={Record}/>
+            <Stack.Screen name="Profile" component={Profile}/>
+          </Stack.Group>
         </Stack.Navigator>
       </NavigationContainer>
     </ReduxWrapper>
