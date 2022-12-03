@@ -4,7 +4,6 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-react-native-web',
-    '@storybook/preset-ant-design',
   ],
   framework: '@storybook/react',
 };
