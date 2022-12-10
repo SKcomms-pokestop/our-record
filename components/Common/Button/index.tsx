@@ -8,13 +8,13 @@ export type ButtonProps = {
 };
 
 export const OurButton = ({ text, onPress, loading }: ButtonProps) => (
-  <StyledButton onPress={onPress}>
+  <StyledButton onPress={onPress} disabled={loading}>
     {loading && <StyledLoading />}
     <StyledText>{text}</StyledText>
   </StyledButton>
 );
 
-const StyledButton = styled.Pressable`
+const StyledButton = styled.TouchableOpacity`
   flex-direction: row;
   height: 35px;
   padding: 4px 15px;
