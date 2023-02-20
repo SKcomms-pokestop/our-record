@@ -23,7 +23,7 @@ export default function Home() {
     <View>
       <Text>{email}</Text>
       <WingBlank>
-        <OurButton text="안녕" onPress={() => alert('hi')} />
+        <OurButton text="안녕" onPress={() => alert('hi?')} />
         <OurButton text="안녕" onPress={() => alert('hi')} loading />
       </WingBlank>
       {/* <OurButton text="안녕" loading /> */}

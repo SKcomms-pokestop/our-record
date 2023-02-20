@@ -33,8 +33,8 @@ const getStories = () => {
   return [
     require('../components/Common/Button/Index.stories.tsx'),
     require('../components/Common/Record/Record.stories.tsx'),
-    require('../components/Common/Typography/Title.stories.tsx'),
     require('../components/Common/Typography/Text.stories.tsx'),
+    require('../components/Common/Typography/Title.stories.tsx'),
   ];
 };
 
