@@ -10,6 +10,9 @@ export default function Home() {
   const { email } = useSelector((state: RootState) => state.common.user);
 
   const dispatch = useDispatch();
+  useEffect(() => {
+    console.log('debug test');
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {

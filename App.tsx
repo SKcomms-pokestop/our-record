@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useLinkTo } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ReduxWrapper from './modules/ReduxWrapper';
@@ -9,35 +9,30 @@ import { TouchableOpacity } from 'react-native';
 import Account from './pages/account';
 import Record from './pages/record';
 
-const Stack = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
     <ReduxWrapper>
       <NavigationContainer>
-        {/* home은 따로 빼야? */}
-        <Stack.Navigator initialRouteName="home">
-          <Stack.Screen
+        {/* home */}
+        <Tab.Navigator initialRouteName="home">
+          <Tab.Screen
+            name="home"
+            component={Home}
+            options={{
+              title: '최근 회의록',
+              tabBarLabel: '최근 회의록',
+              tabBarItemStyle: { display: 'none' },
+            }}
+          />
+          {/* 폴더 */}
+          <Tab.Screen
             name="folder"
             component={Folder}
             options={{
               title: '폴더',
               tabBarLabel: '폴더',
-              // headerLeft: props => (
-              //   <TouchableOpacity
-              //     {...props}
-              //     style={{ marginLeft: 15 }}
-              //     onPress={() => {
-              //       // Do something
-              //     }}>
-              //     <MaterialCommunityIcons
-              //       name="home"
-              //       color="#000"
-              //       size={25}
-              //       {...props}
-              //     />
-              //   </TouchableOpacity>
-              // ),
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons
                   name="folder"
@@ -45,9 +40,25 @@ const App = () => {
                   size={size}
                 />
               ),
+              headerLeft: props => (
+                <TouchableOpacity
+                  {...props}
+                  style={{ marginLeft: 15 }}
+                  onPress={e => {
+                    console.log(e);
+                  }}>
+                  <MaterialCommunityIcons
+                    name="home"
+                    color="#000"
+                    size={25}
+                    {...props}
+                  />
+                </TouchableOpacity>
+              ),
             }}
           />
-          <Stack.Screen
+          {/* 녹음하기 */}
+          <Tab.Screen
             name="record"
             component={Record}
             options={{
@@ -62,7 +73,8 @@ const App = () => {
               ),
             }}
           />
-          <Stack.Screen
+          {/* 내정보 */}
+          <Tab.Screen
             name="account"
             component={Account}
             options={{
@@ -77,7 +89,7 @@ const App = () => {
               ),
             }}
           />
-        </Stack.Navigator>
+        </Tab.Navigator>
       </NavigationContainer>
     </ReduxWrapper>
   );
