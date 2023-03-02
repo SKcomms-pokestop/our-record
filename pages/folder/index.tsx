@@ -1,10 +1,11 @@
 import { Text, View } from 'react-native';
 import React, { useEffect } from 'react';
+import Layout from '../../components/Common/Layout';
 
 export default function Folder() {
   return (
-    <View>
+    <Layout title="폴더">
       <Text>Folder</Text>
-    </View>
+    </Layout>
   );
 }

@@ -21,6 +21,7 @@ const App = () => {
             name="home"
             component={Home}
             options={{
+              headerShown: false,
               title: '최근 회의록',
               tabBarLabel: '최근 회의록',
               tabBarItemStyle: { display: 'none' },
@@ -31,6 +32,7 @@ const App = () => {
             name="folder"
             component={Folder}
             options={{
+              headerShown: false,
               title: '폴더',
               tabBarLabel: '폴더',
               tabBarIcon: ({ color, size }) => (
@@ -39,21 +41,6 @@ const App = () => {
                   color={color}
                   size={size}
                 />
-              ),
-              headerLeft: props => (
-                <TouchableOpacity
-                  {...props}
-                  style={{ marginLeft: 15 }}
-                  onPress={e => {
-                    console.log(e);
-                  }}>
-                  <MaterialCommunityIcons
-                    name="home"
-                    color="#000"
-                    size={25}
-                    {...props}
-                  />
-                </TouchableOpacity>
               ),
             }}
           />
