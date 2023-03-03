@@ -1,11 +1,10 @@
 import React from 'react';
-import { NavigationContainer, useLinkTo } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ReduxWrapper from './modules/ReduxWrapper';
 import Home from './pages/home';
 import Folder from './pages/folder';
-import { TouchableOpacity } from 'react-native';
 import Account from './pages/account';
 import Record from './pages/record';
 
