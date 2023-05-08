@@ -1,12 +1,11 @@
 import { Text, View } from 'react-native';
-import React from 'react';
-import { Header } from '../../components/Header/Header';
+import React, { useEffect } from 'react';
+import Layout from '../../components/Common/Layout';
 
 export default function Folder() {
   return (
-    <View>
-      <Header></Header>
+    <Layout title="폴더">
       <Text>Folder</Text>
-    </View>
+    </Layout>
   );
 }
