@@ -107,7 +107,10 @@ export default function Folder() {
         renderItem={({ item }) => {
           return (
             <View style={styles.notificationBox}>
-              <Image style={styles.image} source={item.icon} />
+              <Image
+                style={styles.image}
+                source={require('../../assets/facebook-like.png')}
+              />
               <Text style={styles.description}>{item.description}</Text>
             </View>
           );

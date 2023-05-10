@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   icon: {
     width: 30,
     height: 30,
-    marginTop: 25,
+    marginTop: 20,
   },
   info: {
     fontSize: 18,

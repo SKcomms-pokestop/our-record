@@ -21,27 +21,39 @@ export default function Account() {
       <View style={styles.body}>
         <View style={styles.item}>
           <View style={styles.iconContent}>
-            <MaterialCommunityIcons
-              name="cog"
-              size={24}
+            <Image
               style={styles.icon}
-              color="#fff"></MaterialCommunityIcons>
+              source={{
+                uri: 'https://img.icons8.com/color/70/000000/administrator-male.png',
+              }}
+            />
           </View>
           <View style={styles.infoContent}>
-            <Text style={styles.info}>설정</Text>
+            <Text style={styles.info}>
+              <MaterialCommunityIcons
+                name="cog"
+                size={24}></MaterialCommunityIcons>
+              설정
+            </Text>
           </View>
         </View>
 
         <View style={styles.item}>
           <View style={styles.iconContent}>
-            <MaterialCommunityIcons
-              name="account"
-              size={24}
+            <Image
               style={styles.icon}
-              color="#fff"></MaterialCommunityIcons>
+              source={{
+                uri: 'https://img.icons8.com/color/70/000000/administrator-male.png',
+              }}
+            />
           </View>
           <View style={styles.infoContent}>
-            <Text style={styles.info}>로그인/로그아웃</Text>
+            <Text style={styles.info}>
+              <MaterialCommunityIcons
+                name="account"
+                size={24}></MaterialCommunityIcons>
+              로그인/로그아웃
+            </Text>
           </View>
         </View>
       </View>
@@ -83,15 +95,21 @@ const styles = StyleSheet.create({
   item: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+  },
+  infoContent: {
+    flex: 1,
+    alignItems: 'flex-start',
   },
   iconContent: {
-    paddingRight: 15,
+    flex: 1,
+    alignItems: 'flex-end',
+    paddingRight: 5,
   },
   icon: {
     width: 30,
     height: 30,
-    marginTop: 25,
+    marginTop: 20,
   },
   info: {
     fontSize: 18,

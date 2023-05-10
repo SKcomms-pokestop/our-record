@@ -81,7 +81,9 @@ export default function Folder() {
         <View style={styles.inputContainer}>
           <Image
             style={[styles.icon, styles.inputIcon]}
-            source={require('../../assets/search.png')}
+            source={{
+              uri: 'https://img.icons8.com/color/70/000000/search.png',
+            }}
           />
           <TextInput
             style={styles.inputs}
@@ -96,7 +98,9 @@ export default function Folder() {
           onPress={() => showAlert('search')}>
           <Image
             style={[styles.icon, styles.iconBtnSearch]}
-            source={require('../../assets/search.png')}
+            source={{
+              uri: 'https://img.icons8.com/color/70/000000/search.png',
+            }}
           />
         </TouchableOpacity>
       </View>
