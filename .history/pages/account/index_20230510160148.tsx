@@ -27,7 +27,7 @@ export default function Account() {
               style={styles.icon}
               color="#fff"></MaterialCommunityIcons>
           </View>
-          <View>
+          <View style={styles.infoContent}>
             <Text style={styles.info}>설정</Text>
           </View>
         </View>
@@ -40,7 +40,7 @@ export default function Account() {
               style={styles.icon}
               color="#fff"></MaterialCommunityIcons>
           </View>
-          <View>
+          <View style={styles.iconContent}>
             <Text style={styles.info}>로그인/로그아웃</Text>
           </View>
         </View>
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   icon: {
     width: 30,
     height: 30,
-    marginTop: 20,
+    marginTop: 25,
   },
   info: {
     fontSize: 18,
