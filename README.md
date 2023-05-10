@@ -19,4 +19,4 @@ npm run ios
 
 ```
 
-test
+miro - https://miro.com/app/board/uXjVPMRzudk=/?share_link_id=543976838404
