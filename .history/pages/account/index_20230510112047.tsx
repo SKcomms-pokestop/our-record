@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function Account() {
   return (
@@ -9,7 +8,9 @@ export default function Account() {
         <View style={styles.headerContent}>
           <Image
             style={styles.avatar}
-            source={require('../../assets/avatar6.png')}
+            source={{
+              uri: 'https://bootdey.com/img/Content/avatar/avatar6.png',
+            }}
           />
 
           <Text style={styles.name}>배영기</Text>
@@ -21,27 +22,15 @@ export default function Account() {
       <View style={styles.body}>
         <View style={styles.item}>
           <View style={styles.iconContent}>
-            <MaterialCommunityIcons
-              name="cog"
-              size={24}
+            <Image
               style={styles.icon}
-              color="#fff"></MaterialCommunityIcons>
+              source={{
+                uri: 'https://img.icons8.com/color/70/000000/administrator-male.png',
+              }}
+            />
           </View>
           <View style={styles.infoContent}>
-            <Text style={styles.info}>설정</Text>
-          </View>
-        </View>
-
-        <View style={styles.item}>
-          <View style={styles.iconContent}>
-            <MaterialCommunityIcons
-              name="account"
-              size={24}
-              style={styles.icon}
-              color="#fff"></MaterialCommunityIcons>
-          </View>
-          <View style={styles.infoContent}>
-            <Text style={styles.info}>로그인/로그아웃</Text>
+            <Text style={styles.info}>Settings</Text>
           </View>
         </View>
       </View>
@@ -88,11 +77,12 @@ const styles = StyleSheet.create({
   infoContent: {
     flex: 1,
     alignItems: 'flex-start',
+    paddingLeft: 5,
   },
   iconContent: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingRight: 15,
+    flex: 1,
+    alignItems: 'flex-end',
+    paddingRight: 5,
   },
   icon: {
     width: 30,

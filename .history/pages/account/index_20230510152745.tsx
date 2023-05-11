@@ -85,19 +85,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  infoContent: {
-    flex: 1,
-    alignItems: 'flex-start',
-  },
   iconContent: {
-    justifyContent: 'center',
-    alignItems: 'center',
     paddingRight: 15,
   },
   icon: {
     width: 30,
     height: 30,
-    marginTop: 20,
+    marginTop: 25,
   },
   info: {
     fontSize: 18,

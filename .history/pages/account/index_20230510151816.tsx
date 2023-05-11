@@ -21,24 +21,29 @@ export default function Account() {
       <View style={styles.body}>
         <View style={styles.item}>
           <View style={styles.iconContent}>
-            <MaterialCommunityIcons
-              name="cog"
-              size={24}
+            <Image
               style={styles.icon}
-              color="#fff"></MaterialCommunityIcons>
+              source={{
+                uri: 'https://img.icons8.com/color/70/000000/administrator-male.png',
+              }}
+            />
           </View>
           <View style={styles.infoContent}>
+            <MaterialCommunityIcons
+              name="cog"
+              size={24}></MaterialCommunityIcons>
             <Text style={styles.info}>설정</Text>
           </View>
         </View>
 
         <View style={styles.item}>
           <View style={styles.iconContent}>
-            <MaterialCommunityIcons
-              name="account"
-              size={24}
+            <Image
               style={styles.icon}
-              color="#fff"></MaterialCommunityIcons>
+              source={{
+                uri: 'https://img.icons8.com/color/70/000000/administrator-male.png',
+              }}
+            />
           </View>
           <View style={styles.infoContent}>
             <Text style={styles.info}>로그인/로그아웃</Text>
@@ -88,11 +93,12 @@ const styles = StyleSheet.create({
   infoContent: {
     flex: 1,
     alignItems: 'flex-start',
+    paddingLeft: 5,
   },
   iconContent: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingRight: 15,
+    flex: 1,
+    alignItems: 'flex-end',
+    paddingRight: 5,
   },
   icon: {
     width: 30,

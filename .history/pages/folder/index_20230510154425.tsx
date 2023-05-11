@@ -14,62 +14,62 @@ export default function Folder() {
   const data = [
     {
       id: 1,
-      icon: require('../../assets/facebook-like.png'),
+      icon: require('../../assets/avatar6.png'),
       description:
         'Lorem ipsum dolor sit amet, indu consectetur adipiscing elit',
     },
     {
       id: 2,
-      icon: require('../../assets/facebook-like.png'),
+      icon: 'https://img.icons8.com/color/70/000000/administrator-male.png',
       description:
         'Lorem ipsum dolor sit amet, indu consectetur adipiscing elit',
     },
     {
       id: 3,
-      icon: require('../../assets/facebook-like.png'),
+      icon: 'https://img.icons8.com/color/70/000000/filled-like.png',
       description:
         'Lorem ipsum dolor sit amet, indu consectetur adipiscing elit',
     },
     {
       id: 4,
-      icon: require('../../assets/facebook-like.png'),
+      icon: 'https://img.icons8.com/color/70/000000/facebook-like.png',
       description:
         'Lorem ipsum dolor sit amet, indu consectetur adipiscing elit',
     },
     {
       id: 5,
-      icon: require('../../assets/facebook-like.png'),
+      icon: 'https://img.icons8.com/color/70/000000/shutdown.png',
       description:
         'Lorem ipsum dolor sit amet, indu consectetur adipiscing elit',
     },
     {
       id: 6,
-      icon: require('../../assets/facebook-like.png'),
+      icon: 'https://img.icons8.com/color/70/000000/traffic-jam.png',
       description:
         'Lorem ipsum dolor sit amet, indu consectetur adipiscing elit',
     },
     {
       id: 7,
-      icon: require('../../assets/facebook-like.png'),
+      icon: 'https://img.icons8.com/dusk/70/000000/visual-game-boy.png',
       description:
         'Lorem ipsum dolor sit amet, indu consectetur adipiscing elit',
     },
     {
       id: 8,
-      icon: require('../../assets/facebook-like.png'),
+      icon: 'https://img.icons8.com/flat_round/70/000000/cow.png',
       description:
         'Lorem ipsum dolor sit amet, indu consectetur adipiscing elit',
     },
     {
       id: 9,
-      icon: require('../../assets/facebook-like.png'),
+      icon: 'https://img.icons8.com/color/70/000000/coworking.png',
       description:
         'Lorem ipsum dolor sit amet, indu consectetur adipiscing elit',
     },
   ];
 
   const [results, setResults] = useState(data);
-  const [query, setQuery] = useState<string>();
+  const [query, setQuery] = useState();
 
   const showAlert = (viewId: string) => {
     Alert.alert('Alert', 'Button pressed ' + viewId);
@@ -81,13 +81,15 @@ export default function Folder() {
         <View style={styles.inputContainer}>
           <Image
             style={[styles.icon, styles.inputIcon]}
-            source={require('../../assets/search.png')}
+            source={{
+              uri: 'https://img.icons8.com/color/70/000000/search.png',
+            }}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Search..."
             underlineColorAndroid="transparent"
-            onChangeText={name_address => setQuery(name_address)}
+            onChangeText={name_address => setQuery({ name_address })}
           />
         </View>
 
@@ -96,18 +98,21 @@ export default function Folder() {
           onPress={() => showAlert('search')}>
           <Image
             style={[styles.icon, styles.iconBtnSearch]}
-            source={require('../../assets/search.png')}
+            source={{
+              uri: 'https://img.icons8.com/color/70/000000/search.png',
+            }}
           />
         </TouchableOpacity>
       </View>
 
       <FlatList
         style={styles.notificationList}
+        enableEmptySections={true}
         data={results}
         renderItem={({ item }) => {
           return (
             <View style={styles.notificationBox}>
-              <Image style={styles.image} source={item.icon} />
+              <Image style={styles.image} source={{ uri: item.icon }} />
               <Text style={styles.description}>{item.description}</Text>
             </View>
           );

@@ -69,7 +69,7 @@ export default function Folder() {
   ];
 
   const [results, setResults] = useState(data);
-  const [query, setQuery] = useState<string>();
+  const [query, setQuery] = useState();
 
   const showAlert = (viewId: string) => {
     Alert.alert('Alert', 'Button pressed ' + viewId);
@@ -81,13 +81,15 @@ export default function Folder() {
         <View style={styles.inputContainer}>
           <Image
             style={[styles.icon, styles.inputIcon]}
-            source={require('../../assets/search.png')}
+            source={{
+              uri: 'https://img.icons8.com/color/70/000000/search.png',
+            }}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Search..."
             underlineColorAndroid="transparent"
-            onChangeText={name_address => setQuery(name_address)}
+            onChangeText={name_address => setQuery({ name_address })}
           />
         </View>
 
@@ -96,13 +98,16 @@ export default function Folder() {
           onPress={() => showAlert('search')}>
           <Image
             style={[styles.icon, styles.iconBtnSearch]}
-            source={require('../../assets/search.png')}
+            source={{
+              uri: 'https://img.icons8.com/color/70/000000/search.png',
+            }}
           />
         </TouchableOpacity>
       </View>
 
       <FlatList
         style={styles.notificationList}
+        enableEmptySections={true}
         data={results}
         renderItem={({ item }) => {
           return (

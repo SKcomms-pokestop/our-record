@@ -37,8 +37,7 @@ export default function Account() {
             <MaterialCommunityIcons
               name="account"
               size={24}
-              style={styles.icon}
-              color="#fff"></MaterialCommunityIcons>
+              style={styles.icon}></MaterialCommunityIcons>
           </View>
           <View style={styles.infoContent}>
             <Text style={styles.info}>로그인/로그아웃</Text>
@@ -90,7 +89,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   iconContent: {
-    justifyContent: 'center',
     alignItems: 'center',
     paddingRight: 15,
   },

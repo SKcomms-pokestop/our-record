@@ -90,8 +90,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   iconContent: {
-    justifyContent: 'center',
-    alignItems: 'center',
     paddingRight: 15,
   },
   icon: {
